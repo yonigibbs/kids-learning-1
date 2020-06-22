@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Kids Learning</title>
+    <meta charset="UTF-8" />
+  </head>
 
-<head>
-	<title>Parcel Sandbox</title>
-	<meta charset="UTF-8" />
-</head>
+  <body onload="generateSum();">
+    <script>
+      let max, min;
 
-<body>
-	<div id="app"></div>
+      function generateSum() {
+        let x = Math.floor(Math.random() * 100);
+        let y = Math.floor(Math.random() * 100);
 
-	<script src="src/index.js">
-	</script>
-</body>
+        max = Math.max(x, y);
+        min = Math.min(x, y);
+        document.getElementById("first").innerText = Math.max(x, y);
+        document.getElementById("second").innerText = Math.min(x, y);
+      }
 
+      function checkAnswer() {
+        let rightAnswer = max - min;
+        if (document.getElementById("answer").value == rightAnswer)
+          alert("Correct");
+        else alert("Wrong");
+      }
+    </script>
+
+    <div>
+      <input type="button" value="Generate Sum" onclick="generateSum();" />
+    </div>
+    <div id="first"></div>
+    <div id="second"></div>
+    <div>Your answer: <input id="answer" /></div>
+    <div>
+      <input type="button" onclick="checkAnswer();" value="Check answer" />
+    </div>
+  </body>
 </html>
