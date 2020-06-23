@@ -1,40 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kids Learning</title>
-    <meta charset="UTF-8" />
-  </head>
-
-  <body onload="generateSum();">
+  <body>
     <script>
-      let max, min;
-
-      function generateSum() {
-        let x = Math.floor(Math.random() * 100);
-        let y = Math.floor(Math.random() * 100);
-
-        max = Math.max(x, y);
-        min = Math.min(x, y);
-        document.getElementById("first").innerText = Math.max(x, y);
-        document.getElementById("second").innerText = Math.min(x, y);
-      }
-
-      function checkAnswer() {
-        let rightAnswer = max - min;
-        if (document.getElementById("answer").value == rightAnswer)
-          alert("Correct");
-        else alert("Wrong");
+      function sayhello() {
+        var name = document.getElementById("name").value;
+        document.getElementById("hello").innerText = "hiya " + name;
       }
     </script>
-
-    <div>
-      <input type="button" value="Generate Sum" onclick="generateSum();" />
+    <div style="color: teal; font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <h1>my name</h1>
     </div>
-    <div id="first"></div>
-    <div id="second"></div>
-    <div>Your answer: <input id="answer" /></div>
+    <h2>arlo</h2>
+    <img
+      width="100"
+      src="https://vignette.wikia.nocookie.net/disney/images/f/f6/Profile_-_Arlo.png/revision/latest?cb=20190829185051"
+      alt=""
+    />
+    <h6>gibbs</h6>
     <div>
-      <input type="button" onclick="checkAnswer();" value="Check answer" />
+      enter your name below
+      <p></p>
+      <input type="text" id="name" onchange="sayhello();" />
+      <div id="hello"></div>
     </div>
   </body>
 </html>
